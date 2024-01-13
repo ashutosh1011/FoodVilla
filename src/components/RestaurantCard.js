@@ -9,7 +9,7 @@ const RestaurantCard = (restaurant) => {
       <img src={IMG_CDN_URL + cloudinaryImageId} alt="img" />
       <h1>{name}</h1>
       <h4>{avgRatingString}</h4>
-      <h4>{cuisines.join()}</h4>
+      <h4>{cuisines.join(", ")}</h4>
     </div>
   );
 };

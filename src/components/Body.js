@@ -26,10 +26,11 @@ export const Body = () => {
       const data = await res.json();
       console.log(data);
       setFilteredRestaurant(
-        data.cards[3].card.card.gridElements.infoWithStyle.restaurants
+        data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
       );
       setAllRestaurant(
-        data.cards[3].card.card.gridElements.infoWithStyle.restaurants
+        data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
       );
     } catch (error) {
       console.error(error);
