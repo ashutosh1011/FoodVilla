@@ -4,6 +4,10 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer.js";
 import { filerData } from "../utils/Common.js";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline.js";
+
+
+
 
 export const Body = () => {
   const [txt, setTxt] = useState("");
@@ -32,6 +36,11 @@ export const Body = () => {
       console.error(error);
     }
   };
+
+  const isOnline = useOnline(); //we can also use npm library
+
+  if(!isOnline)
+  return <div className="offline"><h1>You are currently offline! Please Check your wifi📶</h1></div>
 
   return allRestaurant.length === 0 ? (
     <Shimmer />

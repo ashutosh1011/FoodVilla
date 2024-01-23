@@ -1,5 +1,5 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-
 
 const Title = () => (
   <a href="/">
@@ -27,6 +27,9 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>Cart</li>
+          <li>
+            <button className="button-login-logout">LogIn/logout</button>
+          </li>
         </ul>
       </nav>
     </div>
