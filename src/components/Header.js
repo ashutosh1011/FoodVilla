@@ -28,8 +28,9 @@ const Header = () => {
           </li>
           <li>Cart</li>
           <li>
-            <button className="button-login-logout">LogIn/logout</button>
+            <Link to= "/grocerymart">Grocery-Mart</Link>
           </li>
+
         </ul>
       </nav>
     </div>

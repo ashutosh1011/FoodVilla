@@ -8,6 +8,11 @@ import About from "./components/About";
 import { RouterProvider } from "react-router-dom";
 import Error from "./components/Error";
 import Menu from "./components/Menu";
+import { Suspense, lazy } from "react";
+import Shimmer from "./components/Shimmer";
+
+const GroceryMart = lazy(() => import('./components/Grocerymart')) //lazy loading  or code splitting
+
 
 const AppLayout = () => (
   <>
@@ -22,10 +27,11 @@ const appRoute = createBrowserRouter([
     path: "/",
     element: <AppLayout />,
     errorElement: <Error />,
-    children: [{
+    children: [
+      {
         path: "/",
-        element:<Body/>
-    },
+        element: <Body />,
+      },
       {
         path: "/about",
         element: <About />,
@@ -36,8 +42,16 @@ const appRoute = createBrowserRouter([
       },
       {
         path: "restaurant/:id",
-        element: <Menu/>
-      }
+        element: <Menu />,
+      },
+      {
+        path: "/grocerymart",
+        element: (
+          <Suspense fallback={<Shimmer/>} >
+            <GroceryMart />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);
