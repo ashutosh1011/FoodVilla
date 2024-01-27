@@ -83,3 +83,10 @@
   border-radius: 2px;
 }
 
+.section{
+  border:2px black solid;
+  padding: 2px;
+  margin:5px;
+  cursor: pointer;
+}
+
