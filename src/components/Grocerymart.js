@@ -25,7 +25,7 @@ const Section = ({ title, description, isVisible, setIsVisible,setNotVisible }) 
 };
 
 const Grocerymart = () => {
-  const [visibleSection, setVisibleSection] = useState("about");
+  const [visibleSection, setVisibleSection] = useState("none");
   return (
     <div className="grocery-mart">
       <Section
