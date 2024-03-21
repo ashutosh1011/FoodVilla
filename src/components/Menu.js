@@ -6,22 +6,14 @@ import Shimmer from "./Shimmer";
 import { addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 
-
-
-
-
-
 const Menu = () => {
   const dispatch = useDispatch();
+  
 
+  
 
-  Handler = () => {
-    dispatch(addItem("oranges"));
-  };
   const { id } = useParams();
   const restaurant = useRestaurant(id);
-
-
 
   return !restaurant ? (
     <Shimmer />
@@ -37,7 +29,9 @@ const Menu = () => {
       <h3>{restaurant.locality}</h3>
       <h3>{restaurant.avgRating} star</h3>
       <h4>{restaurant.city}</h4>
-      <button className="btn" onClick={()=>Handler()}>AddItem</button>
+      <button className="btn">
+        AddItem
+      </button>
     </div>
   );
 };
